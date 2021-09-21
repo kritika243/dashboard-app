@@ -28,7 +28,7 @@ export default function Sidebar() {
           <nav className={styles.sidebar_nav}>
             <ul>
               {sidebarNavLinks.map((sidebarNavLink) => (
-                <li className={styles.sidebar_nav_item}>
+                <li className={styles.sidebar_nav_item} key={sidebarNavLink}>
                   <Link
                     className={
                       loacation.pathname === `/${sidebarNavLink}`
