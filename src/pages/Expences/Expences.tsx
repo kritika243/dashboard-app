@@ -4,6 +4,8 @@ import person1 from '../../assets/png/person1.png'
 import person2 from '../../assets/png/person2.png'
 import person3 from '../../assets/png/person3.png'
 import addIcon from '../../assets/png/addIcon.png'
+import optionsIcon from '../../assets/png/menuIcon.png'
+import cartIcon from '../../assets/svg/cartIcon.svg'
 
 import { BarChart, Bar, ResponsiveContainer, Cell } from 'recharts'
 
@@ -198,7 +200,7 @@ export default function Expences() {
                 </button>
               </div>
             </div>
-            <p className={styles.date}>01 - 31 Jan, 2022</p>
+            <p className={styles.date}>01 - 31 Jan, 2021</p>
             <ResponsiveContainer width='100%' minHeight='9vh'>
               <BarChart width={150} height={40} data={data}>
                 <Bar
@@ -220,6 +222,29 @@ export default function Expences() {
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
+
+            <div className={styles.expences_overview_header}>
+              <p className={styles.expences_overview_title}>Today</p>
+              <button>
+                <img src={optionsIcon} alt='options' />
+              </button>
+            </div>
+            <ul>
+              <li className={styles.expense_item}>
+                <div className={styles.expence_item_left}>
+                  <div className={styles.expense_item_div}>
+                    <img src={cartIcon} alt='cart' />
+                  </div>
+                  <div className={styles.expense_item_details}>
+                    <p className={styles.expense_item_title}>Grocery</p>
+                    <p className={styles.expense_item_time}>
+                      3:20 pm • New Delhi
+                    </p>
+                  </div>
+                </div>
+                <p className={styles.expense_item_price}>-412.600</p>
+              </li>
+            </ul>
           </section>
         </div>
       </main>
