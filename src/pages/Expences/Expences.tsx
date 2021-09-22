@@ -1,12 +1,14 @@
+import { useState } from 'react'
 import styles from './Expences.module.scss'
 import person1 from '../../assets/png/person1.png'
 import person2 from '../../assets/png/person2.png'
 import person3 from '../../assets/png/person3.png'
 import addIcon from '../../assets/png/addIcon.png'
 
-import { BarChart, Bar, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, ResponsiveContainer, Cell } from 'recharts'
 
 export default function Expences() {
+  const [activeIndex, setActiveIndex] = useState(0)
   const data = [
     {
       name: 'Page A',
@@ -51,6 +53,7 @@ export default function Expences() {
       amt: 2100,
     },
   ]
+  const mouseOverHandler = (data: any, index: number) => setActiveIndex(index)
   return (
     <>
       <main className={styles.expences}>
@@ -72,7 +75,23 @@ export default function Expences() {
             <p className={styles.date}>01 - 31 Jan, 2022</p>
             <ResponsiveContainer width='100%' minHeight='9vh'>
               <BarChart width={150} height={40} data={data}>
-                <Bar dataKey='uv' fill='rgba(21, 122, 255, 0.2)' />
+                <Bar
+                  dataKey='uv'
+                  fill='rgba(21, 122, 255, 0.2)'
+                  onMouseOver={mouseOverHandler}
+                >
+                  {data.map((entry, index) => (
+                    <Cell
+                      cursor='pointer'
+                      fill={
+                        index === activeIndex
+                          ? 'rgba(21, 122, 255)'
+                          : 'rgba(21, 122, 255, 0.2)'
+                      }
+                      key={index}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </section>
