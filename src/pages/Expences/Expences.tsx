@@ -8,6 +8,8 @@ import optionsIcon from '../../assets/png/menuIcon.png'
 import cartIcon from '../../assets/svg/cartIcon.svg'
 import transportIcon from '../../assets/svg/transportIcon.svg'
 import houseIcon from '../../assets/svg/houseIcon.svg'
+import boxes from '../../assets/png/boxes.png'
+import pot from '../../assets/png/plant.png'
 
 import { BarChart, Bar, ResponsiveContainer, Cell } from 'recharts'
 
@@ -398,6 +400,19 @@ export default function Expences() {
                 </li>
               ))}
             </ul>
+
+            <div className={styles.save_money_div}>
+              <img className={styles.boxes} src={boxes} alt='boxes' />
+              <img className={styles.pot} src={pot} alt='pot' />
+              <p className={styles.save_money_title}>Wnat to Start Saving?</p>
+              <p className={styles.save_money_info}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit tenetur quasi dicta quibusdam autem voluptatibus
+              </p>
+              <button className={styles.button} type='button'>
+                Yes!
+              </button>
+            </div>
           </section>
         </div>
       </main>
