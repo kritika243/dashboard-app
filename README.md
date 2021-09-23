@@ -4,4 +4,4 @@
 
 #
 
-##### Tech used - React Js, SCSS for styling
+### Tech used - React Js, SCSS for styling
