@@ -1,6 +1,6 @@
 # Dashboard App
 
-<img src="" />
+<img src="https://github.com/kritika243/dashboard-app/blob/main/public/dashboard-app.png" />
 
 ### To run locally
 
